@@ -1,0 +1,29 @@
+Bits Sets:
+       void possibleSubsets(char A[], int N)
+    {
+        for(int i = 0;i < (1 << N); ++i)
+        {
+            for(int j = 0;j < N;++j)
+                if(i & (1 << j))
+                    cout << A[j] << ‘ ‘;
+            cout << endl;
+    }
+    }
+Counts Bits in Binary Form:
+ int count_one (int n)
+        {
+            while( n )
+            {
+            n = n&(n-1);
+               count++;
+            }
+            return count;
+    }
+Return the Rightmost set bits:
+     x & (-x)
+Find the largest power of 2 (most significant bit in binary form), which is less than or equal to the given number N.
+     N = N | (N>>1)
+ App:
+ They are widely used in the embedded systems,in situations,
+ where we need to set/clear/toggle just one single bit of a specific register without modifying the other contents. 
+ We can do OR/AND/XOR operations with the appropriate mask for the bit position.
