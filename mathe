@@ -1,0 +1,40 @@
+Euler's Totient Function 
+ This formula simply states that the value of the Totient function is the product after multiplying 
+ the number N by the product ((1-(1/p)))
+  for each prime factor of N.
+set<> primes;
+static void mark(int num,int max,int[] arr)
+{
+    int i=2,elem;
+    while((elem=(num*i))<=max)
+    {
+        arr[elem-1]=1;
+        i++;
+    }
+}
+GeneratePrimes()
+{
+    int arr[max_prime];
+    for(int i=1;i<arr.length;i++)   
+    {
+        if(arr[i]==0)
+        {
+            list.add(i+1);
+            mark(i+1,arr.length-1,arr);
+        }
+    }
+}
+main()
+{
+    GeneratePrimes();
+    int N=nextInt();
+    int ans=N;
+    for(int k:set)
+    {
+        if(N%k==0)
+        {
+            ans*=(1-1/k);
+        }
+    }
+    print(ans);
+}
