@@ -27,3 +27,21 @@ Find the largest power of 2 (most significant bit in binary form), which is less
  They are widely used in the embedded systems,in situations,
  where we need to set/clear/toggle just one single bit of a specific register without modifying the other contents. 
  We can do OR/AND/XOR operations with the appropriate mask for the bit position.
+Binary indexed tree :
+              int read(int idx)
+              {
+              int sum = 0;
+    while (idx > 0)
+    {
+        sum += tree[idx];
+        idx -= (idx & -idx);
+    }
+    return sum;
+}
+Update:
+void update(int idx ,int val){
+    while (idx <= MaxVal){
+        tree[idx] += val;
+        idx += (idx & -idx);
+    }
+}
