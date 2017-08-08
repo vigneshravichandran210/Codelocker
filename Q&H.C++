@@ -1,4 +1,5 @@
 //write a program for overlapping the Queen and Horse
+// Actually this is for 1 time input check
 #include <bits/stdc++.h>
 using namespace std;
 bool b[8][8];    //8*8 For horse
