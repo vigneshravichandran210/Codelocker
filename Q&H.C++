@@ -1,5 +1,7 @@
 //write a program for overlapping the Queen and Horse
 // Actually this is for 1 time input check
+// First move is Horse always
+// 8*8 board
 #include <bits/stdc++.h>
 using namespace std;
 bool b[8][8];    //8*8 For horse
@@ -92,7 +94,6 @@ int main()
     b[hx-1][hy-2]=true;
     b[hx+2][hy-1]=true;
     b[hx-1][hy+2]=true;
-    cout<<b[hx-1][hy+2];
     DRqueen(qx+1,qy+1);       // Down Right diagonal
     Dqueen(qx+1,qy);         //Down
     Rqueen(qx,qy+1);         //Right
