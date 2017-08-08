@@ -2,6 +2,7 @@
 // Actually this is for 1 time input check
 // First move is Horse always
 // 8*8 board
+// it is allowed to provide the input in 4*4 also
 #include <bits/stdc++.h>
 using namespace std;
 bool b[8][8];    //8*8 For horse
