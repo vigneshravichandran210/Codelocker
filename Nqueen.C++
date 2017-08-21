@@ -22,14 +22,12 @@ bool isSafe(int board[N][N],int row,int col)
     {
         if (board[i][j])
             return false;
-    }
- 
+    } 
     for (i=row,j=col;j>=0&&i<N;i++,j--)
     {
         if (board[i][j])
             return false;
-    }
- 
+    } 
     return true;
 } 
 bool solveNQ(int board[N][N],int col)
