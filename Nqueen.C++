@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cstdio>
 #include <cstdlib>
-#define N 5
+int N;
 using namespace std;
  
 // print solution 
@@ -15,7 +15,7 @@ void printSolution(int board[N][N])
     }
 }
  
-/* check if a queen can be placed on board[row][col]*/
+// queen placed
 bool isSafe(int board[N][N], int row, int col)
 {
     int i, j;
@@ -39,8 +39,8 @@ bool isSafe(int board[N][N], int row, int col)
     return true;
 }
  
-/*solve N Queen problem */
-bool solveNQUtil(int board[N][N], int col)
+//solve N Queen problem
+bool solveNQ(int board[N][N], int col)
 {
     if (col >= N)
         return true;
@@ -49,7 +49,7 @@ bool solveNQUtil(int board[N][N], int col)
         if ( isSafe(board, i, col) )
         {
             board[i][col] = 1;
-            if (solveNQUtil(board, col + 1) == true)
+            if (solveNQ(board, col + 1) == true)
                 return true;
             board[i][col] = 0;
         }
@@ -57,13 +57,14 @@ bool solveNQUtil(int board[N][N], int col)
     return false;
 }
  
-/* solves the N Queen problem using Backtracking.*/
-bool solveNQ()
+//solves the N Queen problem using Backtracking
+bool solve()
 {
+    cin>>N;
     int board[N][N] = {0};
-    if (solveNQUtil(board, 0) == false)
+    if (solveNQ(board, 0) == false)
     {
-        cout<<"Solution does not exist"<<endl;
+        cout<<"not possible"<<endl;
         return false;
     }
     printSolution(board);
@@ -73,6 +74,6 @@ bool solveNQ()
 // Main
 int main()
 {
-    solveNQ();
+    solve();
     return 0;
 }
